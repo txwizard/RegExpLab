@@ -27,6 +27,8 @@ namespace ConsoleApp1
 			Regex regex = new Regex ( strRegExp , RegexOptions.Multiline | RegexOptions.IgnorePatternWhitespace );
 			MatchCollection matchCollection = regex.Matches ( strTestCases );
 
+			int intMatchNumber = 0;
+
 			foreach ( Match match in matchCollection )
 			{
 				for ( int intGroupIndex = 0 ; intGroupIndex < match.Groups.Count ; intGroupIndex++ )
@@ -34,9 +36,14 @@ namespace ConsoleApp1
 					if ( intGroupIndex == 0 )
 					{
 						Console.WriteLine (
-							@"(1)Full match: {0}" ,
-							match.Groups [ intGroupIndex ] ,
-							intGroupIndex == 0 ? string.Empty : Environment.NewLine );
+							@"{3}Full match {0} of {1}: {2}{3}" ,
+							new object [ ]
+							{
+								++intMatchNumber ,								// Format Item 0: Full match {0}
+								match.Groups.Count ,							// Format Item 1: of {1}:
+								match.Groups [ intGroupIndex ] ,				// Format Item 2: : {2}
+								Environment.NewLine								// Format Item 3: Platform-dependent newline
+							} );
 					}
 					else
 					{
@@ -48,7 +55,9 @@ namespace ConsoleApp1
 				}   // for ( int intGroupIndex = 0 ; intGroupIndex < match.Groups.Count ; intGroupIndex++ )
 			}   // foreach ( Match match in matchCollection )
 
-			Console.WriteLine ( @"Press the RETURN key to exit the program." );
+			Console.WriteLine (
+				@"{0}Press the RETURN key to exit the program." ,
+				Environment.NewLine );
 			Console.ReadLine ( );
 		}   // static void Main
 	}   // class Program
