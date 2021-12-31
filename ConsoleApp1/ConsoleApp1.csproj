@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,15 +32,31 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>WW_Icon1.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
+    <Reference Include="WizardWrx.AnyCSV, Version=7.2.145.0, Culture=neutral, PublicKeyToken=39f6551a21db420a, processorArchitecture=MSIL">
+      <HintPath>..\packages\WizardWrx.AnyCSV.7.2.145\lib\net20\WizardWrx.AnyCSV.dll</HintPath>
+    </Reference>
+    <Reference Include="WizardWrx.ASCIIInfo, Version=8.0.156.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WizardWrx.ASCIIInfo.8.0.156\lib\net35-client\WizardWrx.ASCIIInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="WizardWrx.BitMath, Version=4.3.125.29248, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WizardWrx.BitMath.4.3.125.29248\lib\net20\WizardWrx.BitMath.dll</HintPath>
+    </Reference>
+    <Reference Include="WizardWrx.Common, Version=8.0.177.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WizardWrx.Common.8.0.177\lib\net35-client\WizardWrx.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="WizardWrx.Core, Version=8.0.264.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WizardWrx.Core.8.0.264\lib\net35-client\WizardWrx.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="WizardWrx.FormatStringEngine, Version=8.0.241.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WizardWrx.FormatStringEngine.8.0.241\lib\net35-client\WizardWrx.FormatStringEngine.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -47,6 +64,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="WW_Icon1.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
